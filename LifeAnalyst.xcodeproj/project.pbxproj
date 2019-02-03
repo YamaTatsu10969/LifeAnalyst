@@ -13,6 +13,7 @@
 		67A470982206A7D20044ECF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67A470962206A7D20044ECF4 /* Main.storyboard */; };
 		67A4709A2206A7D40044ECF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67A470992206A7D40044ECF4 /* Assets.xcassets */; };
 		67A4709D2206A7D40044ECF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67A4709B2206A7D40044ECF4 /* LaunchScreen.storyboard */; };
+		67B8438A2206B1FD006785DB /* privateFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B843892206B1FD006785DB /* privateFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		67A470992206A7D40044ECF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67A4709C2206A7D40044ECF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67A4709E2206A7D40044ECF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67B843892206B1FD006785DB /* privateFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = privateFile.swift; sourceTree = "<group>"; };
 		BEB7D1915B1F1FA75734C88F /* Pods-LifeAnalyst.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeAnalyst.release.xcconfig"; path = "Pods/Target Support Files/Pods-LifeAnalyst/Pods-LifeAnalyst.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +77,7 @@
 				67A470992206A7D40044ECF4 /* Assets.xcassets */,
 				67A4709B2206A7D40044ECF4 /* LaunchScreen.storyboard */,
 				67A4709E2206A7D40044ECF4 /* Info.plist */,
+				67B843892206B1FD006785DB /* privateFile.swift */,
 			);
 			path = LifeAnalyst;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			files = (
 				67A470952206A7D20044ECF4 /* ViewController.swift in Sources */,
 				67A470932206A7D20044ECF4 /* AppDelegate.swift in Sources */,
+				67B8438A2206B1FD006785DB /* privateFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
