@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55571DA70778D0106BA6545F /* Pods_LifeAnalyst.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A1CFBA7C93A945EABAC81C /* Pods_LifeAnalyst.framework */; };
 		67A470932206A7D20044ECF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A470922206A7D20044ECF4 /* AppDelegate.swift */; };
 		67A470952206A7D20044ECF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A470942206A7D20044ECF4 /* ViewController.swift */; };
 		67A470982206A7D20044ECF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67A470962206A7D20044ECF4 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		45A1CFBA7C93A945EABAC81C /* Pods_LifeAnalyst.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LifeAnalyst.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60E39C1E1AB1C3A4D771AF1C /* Pods-LifeAnalyst.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeAnalyst.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LifeAnalyst/Pods-LifeAnalyst.debug.xcconfig"; sourceTree = "<group>"; };
 		67A4708F2206A7D20044ECF4 /* LifeAnalyst.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeAnalyst.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67A470922206A7D20044ECF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67A470942206A7D20044ECF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		67A470992206A7D40044ECF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67A4709C2206A7D40044ECF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67A4709E2206A7D40044ECF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEB7D1915B1F1FA75734C88F /* Pods-LifeAnalyst.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeAnalyst.release.xcconfig"; path = "Pods/Target Support Files/Pods-LifeAnalyst/Pods-LifeAnalyst.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55571DA70778D0106BA6545F /* Pods_LifeAnalyst.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		108DC1026913900B53B4DB69 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45A1CFBA7C93A945EABAC81C /* Pods_LifeAnalyst.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		67A470862206A7D20044ECF4 = {
 			isa = PBXGroup;
 			children = (
 				67A470912206A7D20044ECF4 /* LifeAnalyst */,
 				67A470902206A7D20044ECF4 /* Products */,
+				7E9BF366EBC7738DBC0461C8 /* Pods */,
+				108DC1026913900B53B4DB69 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = LifeAnalyst;
 			sourceTree = "<group>";
 		};
+		7E9BF366EBC7738DBC0461C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60E39C1E1AB1C3A4D771AF1C /* Pods-LifeAnalyst.debug.xcconfig */,
+				BEB7D1915B1F1FA75734C88F /* Pods-LifeAnalyst.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 67A470A12206A7D40044ECF4 /* Build configuration list for PBXNativeTarget "LifeAnalyst" */;
 			buildPhases = (
+				DB5B5E5307240853462E13C6 /* [CP] Check Pods Manifest.lock */,
 				67A4708B2206A7D20044ECF4 /* Sources */,
 				67A4708C2206A7D20044ECF4 /* Frameworks */,
 				67A4708D2206A7D20044ECF4 /* Resources */,
+				EE23EDBB86D66747E9B8870A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DB5B5E5307240853462E13C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LifeAnalyst-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE23EDBB86D66747E9B8870A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LifeAnalyst/Pods-LifeAnalyst-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LifeAnalyst/Pods-LifeAnalyst-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		67A4708B2206A7D20044ECF4 /* Sources */ = {
@@ -280,6 +353,7 @@
 		};
 		67A470A22206A7D40044ECF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60E39C1E1AB1C3A4D771AF1C /* Pods-LifeAnalyst.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +372,7 @@
 		};
 		67A470A32206A7D40044ECF4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEB7D1915B1F1FA75734C88F /* Pods-LifeAnalyst.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
