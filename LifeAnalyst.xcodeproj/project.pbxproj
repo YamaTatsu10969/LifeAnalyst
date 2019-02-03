@@ -14,6 +14,8 @@
 		67A4709A2206A7D40044ECF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67A470992206A7D40044ECF4 /* Assets.xcassets */; };
 		67A4709D2206A7D40044ECF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67A4709B2206A7D40044ECF4 /* LaunchScreen.storyboard */; };
 		67B8438A2206B1FD006785DB /* privateFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B843892206B1FD006785DB /* privateFile.swift */; };
+		67B843902206BF62006785DB /* locationCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B8438F2206BF62006785DB /* locationCollection.swift */; };
+		67B843922206BF73006785DB /* location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B843912206BF73006785DB /* location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		67A4709C2206A7D40044ECF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67A4709E2206A7D40044ECF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67B843892206B1FD006785DB /* privateFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = privateFile.swift; sourceTree = "<group>"; };
+		67B8438F2206BF62006785DB /* locationCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationCollection.swift; sourceTree = "<group>"; };
+		67B843912206BF73006785DB /* location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = location.swift; sourceTree = "<group>"; };
 		BEB7D1915B1F1FA75734C88F /* Pods-LifeAnalyst.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeAnalyst.release.xcconfig"; path = "Pods/Target Support Files/Pods-LifeAnalyst/Pods-LifeAnalyst.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,7 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				67A470922206A7D20044ECF4 /* AppDelegate.swift */,
-				67A470942206A7D20044ECF4 /* ViewController.swift */,
+				67B843942206BFA6006785DB /* Models */,
+				67B843952206BFBF006785DB /* Controllers */,
 				67A470962206A7D20044ECF4 /* Main.storyboard */,
 				67A470992206A7D40044ECF4 /* Assets.xcassets */,
 				67A4709B2206A7D40044ECF4 /* LaunchScreen.storyboard */,
@@ -80,6 +85,23 @@
 				67B843892206B1FD006785DB /* privateFile.swift */,
 			);
 			path = LifeAnalyst;
+			sourceTree = "<group>";
+		};
+		67B843942206BFA6006785DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				67B843912206BF73006785DB /* location.swift */,
+				67B8438F2206BF62006785DB /* locationCollection.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		67B843952206BFBF006785DB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				67A470942206A7D20044ECF4 /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		7E9BF366EBC7738DBC0461C8 /* Pods */ = {
@@ -211,7 +233,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67B843902206BF62006785DB /* locationCollection.swift in Sources */,
 				67A470952206A7D20044ECF4 /* ViewController.swift in Sources */,
+				67B843922206BF73006785DB /* location.swift in Sources */,
 				67A470932206A7D20044ECF4 /* AppDelegate.swift in Sources */,
 				67B8438A2206B1FD006785DB /* privateFile.swift in Sources */,
 			);
