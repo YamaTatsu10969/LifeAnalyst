@@ -13,12 +13,10 @@ import GoogleMaps
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    let GoogleAPI = "AIzaSyDqFYNG008D8zVaqQLCh2fk--zqdSeOAcc"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        GMSServices.provideAPIKey(GoogleAPI)
+        GMSServices.provideAPIKey(privateFile.GoogleAPI)
         return true
     }
 
