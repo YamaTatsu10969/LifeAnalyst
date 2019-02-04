@@ -9,8 +9,61 @@
 import UIKit
 import GoogleMaps
 
-class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate, locationCollectionDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    
+    @IBOutlet weak var doingPicker: UIPickerView!
+    
+    @IBOutlet weak var noteText: UITextField!
+    
+    func saved() {
+        
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return locationCollection.selectTitle.count
+    }
+    
+    // UIPickerViewに表示する配列
+    func pickerView(_ pickerView: UIPickerView,
+                    titleForRow row: Int,
+                    forComponent component: Int) -> String? {
+        
+        return locationCollection.selectTitle[row]
+    }
+    
+    // UIPickerViewのRowが選択された時の挙動
+    func pickerView(_ pickerView: UIPickerView,
+                    didSelectRow row: Int,
+                    inComponent component: Int) {
+        // 処理
+    }
+    
+    
+    
+    let locationCollection = LocationCollection.shared
+    
+    
+    @IBAction func didTouchedSaveButton(_ sender: Any) {
+        let coodinate =  marker.position
+        let location = Location()
+        location.title = locationCollection.selectTitle[numberOfComponents(in: doingPicker)]
+        if let note = noteText.text {
+            location.note = note
+        }
+        location.latitude = coodinate.latitude
+        location.longitude = coodinate.longitude
+        locationCollection.addLocation(location)
+        print(locationCollection.selectTitle)
+    }
+    
+    
+    
+    // 東京駅
     let defaultLatitude = 35.681236
     let defaultLongitude = 139.767125
     let defaultZoomLevel:Float = 14.00
@@ -20,8 +73,7 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     // オブジェクトを作って、そこに、どういう風に位置を取るかを指定する。
     // CLLocationManager の使い方はググれ
     let locationManager = CLLocationManager()
-    
-    
+    let marker = GMSMarker()
     
     @IBOutlet weak var shownMap: UIView!
     
@@ -29,6 +81,15 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        doingPicker.delegate = self
+        doingPicker.dataSource = self
+        
+       
+        
+        
+        
+        locationCollection.delegate = self
         
         let camera = GMSCameraPosition.camera(withLatitude: defaultLatitude, longitude: defaultLongitude, zoom: defaultZoomLevel)
         // self はviewの大きさを取っている。 100 * 100 とかにもできるよ。
@@ -57,7 +118,20 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         //
     }
     
+    // ユーザーが指定された地域に入ったことをデリゲートに伝えます。
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        
+    }
     
+    // ユーザーが指定された領域を離れたことをデリゲートに伝えます。
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        
+    }
+    
+    // locationManager(_: didUpdateLocations:)デリゲートメソッドは、位置情報を取得・更新するたびに呼ばれます。
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+    }
     
     
     
