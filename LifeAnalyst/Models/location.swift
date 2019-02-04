@@ -9,18 +9,16 @@
 import Foundation
 
 class Location:Codable {
+    
+    // その場所で何をしたかを記録するために、タイトル（行動）、ノート（詳細）、位置情報を記録する。
     var title: String = ""
     var note: String = ""
-    
-    // ここを追加
     var latitude: Double = 0.00
     var longitude: Double = 0.00
     
     enum CodingKeys: String, CodingKey {
         case title
         case note
-        
-        //ここを追加
         case latitude
         case longitude
     }
@@ -33,8 +31,6 @@ class Location:Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.title = try container.decode(String.self, forKey: .title)
         self.note = try container.decode(String.self, forKey: .note)
-        
-        // ここを追加
         self.latitude = try container.decode(Double.self, forKey: .latitude)
         self.longitude = try container.decode(Double.self, forKey: .longitude)
         
@@ -43,5 +39,7 @@ class Location:Codable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(title, forKey: .title)
         try container.encode(note, forKey: .note)
+//        self.latitude = try container.decode(Double.self, forKey: .latitude)
+//        self.longitude = try container.decode(Double.self, forKey: .longitude)
     }
 }
