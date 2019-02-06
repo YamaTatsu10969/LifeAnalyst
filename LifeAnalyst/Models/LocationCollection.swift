@@ -18,6 +18,7 @@ class LocationCollection {
     var selectTitle:[String] = ["work","programing","study","lanch","dinner","move","reading","rest","youtube"]
     
     let userDefaults = UserDefaults.standard
+    
     private var locations: [Location] = []
     
     weak var delegate: locationCollectionDelegate?

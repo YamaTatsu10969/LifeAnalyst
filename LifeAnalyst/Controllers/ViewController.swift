@@ -57,8 +57,12 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         }
         location.latitude = coodinate.latitude
         location.longitude = coodinate.longitude
+        
         locationCollection.addLocation(location)
-        print(locationCollection.selectTitle)
+        
+        performSegue(withIdentifier: "listShowSegue", sender: nil)
+        
+        //print(locationCollection.getLocation(at: 0))
     }
     
     
@@ -84,10 +88,6 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         
         doingPicker.delegate = self
         doingPicker.dataSource = self
-        
-       
-        
-        
         
         locationCollection.delegate = self
         
