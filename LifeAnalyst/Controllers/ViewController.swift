@@ -16,6 +16,8 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     
     @IBOutlet weak var noteText: UITextField!
     
+    var pickerNum = 0
+    
     func saved() {
         
     }
@@ -41,6 +43,8 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
                     didSelectRow row: Int,
                     inComponent component: Int) {
         // 処理
+        pickerNum = row
+
     }
     
     
@@ -51,12 +55,14 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     @IBAction func didTouchedSaveButton(_ sender: Any) {
         let coodinate =  marker.position
         let location = Location()
-        location.title = locationCollection.selectTitle[numberOfComponents(in: doingPicker)]
+        
+        location.title = locationCollection.selectTitle[pickerNum]
         if let note = noteText.text {
             location.note = note
         }
         location.latitude = coodinate.latitude
         location.longitude = coodinate.longitude
+        location.time = 100
         
         locationCollection.addLocation(location)
         

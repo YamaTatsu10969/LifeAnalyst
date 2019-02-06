@@ -41,12 +41,13 @@ class TableViewController: UITableViewController, locationCollectionDelegate{
         // #warning Incomplete implementation, return the number of rows
         return LocationCollection.shared.locationCount()
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
 
         cell.textLabel?.text = LocationCollection.shared.getLocation(at: indexPath.row).title
+        cell.timeLabel.text = String(LocationCollection.shared.getLocation(at: indexPath.row).time)
+        
 
 
         return cell

@@ -62,7 +62,7 @@ class LocationCollection {
     
     func load() {
         if let data = userDefaults.data(forKey: "locations") {
-            let locations = try! PropertyListDecoder().decode([Location].self, from: data)
+           let locations = try! PropertyListDecoder().decode([Location].self, from: data)
             self.locations  = locations
         }
     }

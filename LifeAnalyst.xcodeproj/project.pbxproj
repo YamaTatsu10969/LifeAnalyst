@@ -17,6 +17,7 @@
 		67B843902206BF62006785DB /* LocationCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B8438F2206BF62006785DB /* LocationCollection.swift */; };
 		67B843922206BF73006785DB /* location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B843912206BF73006785DB /* location.swift */; };
 		67FD2691220AE1FC000DEE9B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FD2690220AE1FC000DEE9B /* TableViewController.swift */; };
+		67FD2695220AF83D000DEE9B /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FD2694220AF83D000DEE9B /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		67B8438F2206BF62006785DB /* LocationCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollection.swift; sourceTree = "<group>"; };
 		67B843912206BF73006785DB /* location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = location.swift; sourceTree = "<group>"; };
 		67FD2690220AE1FC000DEE9B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		67FD2694220AF83D000DEE9B /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		BEB7D1915B1F1FA75734C88F /* Pods-LifeAnalyst.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeAnalyst.release.xcconfig"; path = "Pods/Target Support Files/Pods-LifeAnalyst/Pods-LifeAnalyst.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 			children = (
 				67A470942206A7D20044ECF4 /* ViewController.swift */,
 				67FD2690220AE1FC000DEE9B /* TableViewController.swift */,
+				67FD2694220AF83D000DEE9B /* CustomCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				67B843902206BF62006785DB /* LocationCollection.swift in Sources */,
 				67FD2691220AE1FC000DEE9B /* TableViewController.swift in Sources */,
 				67A470952206A7D20044ECF4 /* ViewController.swift in Sources */,
+				67FD2695220AF83D000DEE9B /* CustomCell.swift in Sources */,
 				67B843922206BF73006785DB /* location.swift in Sources */,
 				67A470932206A7D20044ECF4 /* AppDelegate.swift in Sources */,
 				67B8438A2206B1FD006785DB /* privateFile.swift in Sources */,
