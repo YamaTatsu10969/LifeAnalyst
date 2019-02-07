@@ -15,7 +15,7 @@ protocol locationCollectionDelegate:class {
 class LocationCollection {
     static var shared = LocationCollection()
     
-    var selectTitle:[String] = ["work","programing","study","lanch","dinner","move","reading","rest","youtube"]
+    var selectTitle:[String] = ["No Title","work","programing","study","lanch","dinner","move","reading","rest","youtube"]
     
     let userDefaults = UserDefaults.standard
     

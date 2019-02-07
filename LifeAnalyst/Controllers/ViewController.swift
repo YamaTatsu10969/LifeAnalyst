@@ -42,7 +42,7 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     func pickerView(_ pickerView: UIPickerView,
                     didSelectRow row: Int,
                     inComponent component: Int) {
-        // 処理
+        // 数字を保存しておく
         pickerNum = row
 
     }
@@ -53,6 +53,11 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     
     
     @IBAction func didTouchedSaveButton(_ sender: Any) {
+        saveCollection()
+        //print(locationCollection.getLocation(at: 0))
+    }
+    
+    func saveCollection(){
         let coodinate =  marker.position
         let location = Location()
         
@@ -62,13 +67,11 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         }
         location.latitude = coodinate.latitude
         location.longitude = coodinate.longitude
-        location.time = 100
+        location.time = countTime
         
         locationCollection.addLocation(location)
         
         performSegue(withIdentifier: "listShowSegue", sender: nil)
-        
-        //print(locationCollection.getLocation(at: 0))
     }
     
     
@@ -91,6 +94,9 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.startMonitoring()
+
         
         doingPicker.delegate = self
         doingPicker.dataSource = self
@@ -118,27 +124,77 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         // 精度 これはBestを尽くせという指示　もしかしたら、iPhoneの電池の持ちに影響するかも。捉える衛星の数が変わるから。
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         // 　50m移動したら（例）50m移動したら位置情報を更新する
-        self.locationManager.distanceFilter  = 50
+        self.locationManager.distanceFilter  = 5
         // GPSの使用を開始する
         self.locationManager.startUpdatingLocation()
         //
+        startTimer()
     }
+    
+    private func startMonitoring() {
+        //let status = CLLocationManager.authorizationStatus()
+//        if status == .denied || status == .restricted {
+//            return
+//        }
+        // ジーズの場所
+        let center = CLLocationCoordinate2DMake(35.667113, 139.713878)
+        self.monitoredRegion = CLCircularRegion(center: center, radius: 5, identifier: "region1")
+        self.locationManager.startMonitoring(for: self.monitoredRegion!)
+    }
+
+    
+    
+    private var monitoredRegion: CLCircularRegion?
+
     
     // ユーザーが指定された地域に入ったことをデリゲートに伝えます。
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        
+        startTimer()
     }
     
     // ユーザーが指定された領域を離れたことをデリゲートに伝えます。
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        
+        saveCollection()
     }
     
     // locationManager(_: didUpdateLocations:)デリゲートメソッドは、位置情報を取得・更新するたびに呼ばれます。
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
+        timeInit()
+        startMoveTimer()
+        saveCollection()
     }
     
+    var timer: Timer!
+    var moveTimer: Timer!
+    
+    private var countTime: Int = 0
+    //private var countMoveTime: Int = 0
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(
+            timeInterval: 10,
+            target: self,
+            selector: #selector(self.timerCounter),
+            userInfo: nil,
+            repeats: true)
+    }
+    
+    func startMoveTimer() {
+        moveTimer = Timer.scheduledTimer(
+            timeInterval: 10,
+            target: self,
+            selector: #selector(self.timerCounter),
+            userInfo: nil,
+            repeats: true)
+    }
+    
+    @objc func timerCounter() {
+        countTime += 10
+    }
+    
+    func timeInit(){
+        countTime = 0
+    }
     
     
 
