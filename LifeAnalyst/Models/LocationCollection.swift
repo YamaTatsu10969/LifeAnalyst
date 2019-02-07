@@ -15,9 +15,10 @@ protocol locationCollectionDelegate:class {
 class LocationCollection {
     static var shared = LocationCollection()
     
-    var selectTitle:[String] = ["work","programing","study","lanch","dinner","move","reading","rest","youtube"]
+    var selectTitle:[String] = ["No Title","work","programing","study","lanch","dinner","move","reading","rest","youtube"]
     
     let userDefaults = UserDefaults.standard
+    
     private var locations: [Location] = []
     
     weak var delegate: locationCollectionDelegate?
@@ -61,7 +62,7 @@ class LocationCollection {
     
     func load() {
         if let data = userDefaults.data(forKey: "locations") {
-            let locations = try! PropertyListDecoder().decode([Location].self, from: data)
+           let locations = try! PropertyListDecoder().decode([Location].self, from: data)
             self.locations  = locations
         }
     }

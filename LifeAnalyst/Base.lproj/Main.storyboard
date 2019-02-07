@@ -13,19 +13,39 @@
         <!--Root View Controller-->
         <scene sceneID="QBU-E3-Xhk">
             <objects>
-                <tableViewController id="flK-F9-GdG" sceneMemberID="viewController">
+                <tableViewController id="flK-F9-GdG" customClass="TableViewController" customModule="LifeAnalyst" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="V2H-mD-xPQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="63s-Aa-Ryy">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CustomCell" id="63s-Aa-Ryy" customClass="CustomCell" customModule="LifeAnalyst" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="63s-Aa-Ryy" id="1rh-qx-fU1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNQ-Qm-6N5">
+                                            <rect key="frame" x="313" y="11" width="28" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o17-0Z-rNO">
+                                            <rect key="frame" x="256" y="11" width="49" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="timeLabel" destination="o17-0Z-rNO" id="B10-i0-nj9"/>
+                                    <segue destination="BYZ-38-t0r" kind="showDetail" id="YZK-Zj-uft"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -37,7 +57,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VRb-mo-NQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-804" y="27"/>
+            <point key="canvasLocation" x="-911.20000000000005" y="-193.85307346326837"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="b9g-a5-bQl">
@@ -136,11 +156,12 @@
                         <outlet property="doingPicker" destination="XjQ-OO-xCa" id="erq-9j-t7i"/>
                         <outlet property="noteText" destination="SyI-8q-A7Q" id="8gR-9c-z45"/>
                         <outlet property="shownMap" destination="PcY-Sb-HsO" id="nYO-2n-n4A"/>
+                        <segue destination="flK-F9-GdG" kind="show" identifier="listShowSegue" id="Wdf-8m-b8X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53.600000000000001" y="26.53673163418291"/>
+            <point key="canvasLocation" x="434" y="-336"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ara-j1-U8O">
@@ -155,7 +176,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CoA-Ru-7Ve" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1746" y="627"/>
+            <point key="canvasLocation" x="-911" y="609"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Wdf-8m-b8X"/>
+    </inferredMetricsTieBreakers>
 </document>
