@@ -48,8 +48,6 @@ class TableViewController: UITableViewController, locationCollectionDelegate{
         cell.textLabel?.text = LocationCollection.shared.getLocation(at: indexPath.row).title
         cell.timeLabel.text = String(LocationCollection.shared.getLocation(at: indexPath.row).time)
         
-
-
         return cell
     }
     

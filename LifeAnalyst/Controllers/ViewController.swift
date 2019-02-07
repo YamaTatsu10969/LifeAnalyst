@@ -16,6 +16,8 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     
     @IBOutlet weak var noteText: UITextField!
     
+    var selectedCollection:Location?
+    
     var pickerNum = 0
     
     func saved() {
